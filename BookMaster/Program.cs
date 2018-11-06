@@ -15,7 +15,7 @@ namespace BookMaster
             do
             {
                 Console.WriteLine(" | C: Categories | B: Books | Q: Quit ");
-                Console.WriteLine(" Hello simmi ");
+                Console.WriteLine(" Hello Tóti ");
                 ConsoleKeyInfo key = Console.ReadKey();
                 Console.Clear();
                 switch (key.Key)
