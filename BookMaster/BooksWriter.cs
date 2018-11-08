@@ -7,6 +7,8 @@ using System.IO;
 using System.Xml;
 using System.Data;
 using System.Xml.Serialization;
+using System.Collections;
+using System.Collections.Generic;
 
 
 namespace BookMaster
@@ -22,15 +24,15 @@ namespace BookMaster
             //XmlSerializer serializer = new XmlSerializer(typeof(PurchaseOrder));
             XmlSerializer serializer = new XmlSerializer(typeof(BooksArray));
             TextWriter writer = new StreamWriter(filePath);
-            
+
             BooksArray booksInst = new BooksArray();
-            
-            
+
+
             BooksArray po = new BooksArray();
 
             // Creates an OrderedItem.  
             Book i1 = new Book();
-         
+
 
             i1.Isbn = Isbn;//1;
             i1.Author = Author; //"Sigmar";
@@ -44,14 +46,68 @@ namespace BookMaster
             // Inserts the item into the array.  
             Book[] items = { i1, i2 };
             po.Books = items;
-            
+
 
             // Serializes the purchase order, and closes the TextWriter.  
             serializer.Serialize(writer, po);
 
-           // serializer.Serialize(writer, booksInst);
-           
+            // serializer.Serialize(writer, booksInst);
+
             writer.Close();
+        }
+
+        public static void AddBookNew(int Isbn, string Author, string Title)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(BooksArray));
+            // A FileStream is needed to read the XML document.  
+            FileStream fs = new FileStream(filePath, FileMode.Open);
+            // Declares an object variable of the type to be deserialized.  
+            BooksArray po;
+            // Uses the Deserialize method to restore the object's state   
+            // with data from the XML document. */  
+            po = (BooksArray)serializer.Deserialize(fs);
+
+
+            // Creates an OrderedItem.  
+            Book i1 = new Book();
+
+
+            i1.Isbn = Isbn;//1;
+            i1.Author = Author; //"Sigmar";
+            i1.Title = Title;//"Cat world";
+
+            
+            Book[] items = po.Books;
+
+
+            ArrayList a1 = new ArrayList();
+
+            a1.Add(i1);
+            a1.Add(items);
+
+            BooksArray booksArr = new BooksArray();
+            
+            // Array stuff = a1.ToArray();
+            // booksArr.Books = stuff;
+
+            TextWriter writer = new StreamWriter(filePath);
+
+
+            // Serializes the purchase order, and closes the TextWriter.  
+            serializer.Serialize(writer, items);
+
+            // serializer.Serialize(writer, booksInst);
+
+            writer.Close();
+
+            foreach (Book oi in a1)
+            {
+                Console.WriteLine("\t" +
+                oi.Isbn + "\t" +
+                oi.Title + "\t" +
+                oi.Author + "\t"); 
+
+            }
         }
 
         public static void ListBooks()
