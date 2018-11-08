@@ -17,10 +17,11 @@ namespace BookMaster
         // The XmlArray attribute changes the XML element name  
         // from the default of "OrderedItems" to "Items".  
         [XmlArray("Items")]
-        public Book[] Books;
-       // public decimal SubTotal;
-       // public decimal ShipCost;
-       //  public decimal TotalCost;
+        public List<Book> Books = new List<Book>();
+        // public Book[] Books;
+        // public decimal SubTotal;
+        // public decimal ShipCost;
+        //  public decimal TotalCost;
     }
     public class Book
     {

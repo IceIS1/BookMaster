@@ -2,14 +2,9 @@
 <PurchaseOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.cpandl.com">
   <Items>
     <Book>
-      <Isbn>113</Isbn>
-      <Author>Tryu</Author>
-      <Title>Blela</Title>
-    </Book>
-    <Book>
-      <Isbn>2</Isbn>
-      <Author>1Sigmar</Author>
-      <Title>Dog world</Title>
+      <Isbn>134</Isbn>
+      <Author>Test</Author>
+      <Title>More</Title>
     </Book>
   </Items>
 </PurchaseOrder>
