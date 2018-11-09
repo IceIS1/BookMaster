@@ -8,7 +8,6 @@ using System.Xml;
 using System.Data;
 using System.Xml.Serialization;
 using System.Collections;
-using System.Collections.Generic;
 
 
 namespace BookMaster
@@ -19,16 +18,14 @@ namespace BookMaster
 
         public static void AddBook(int Isbn, string Author, string Title)
         {
-            // Creates an instance of the XmlSerializer class;  
-            // XmlSerializer serializer = specifies the type of object to serialize.  
-            //XmlSerializer serializer = new XmlSerializer(typeof(PurchaseOrder));
+            
             XmlSerializer serializer = new XmlSerializer(typeof(BooksArray));
             TextWriter writer = new StreamWriter(filePath);
 
             BooksArray booksInst = new BooksArray();
            
             
-            // A FileStream is needed to read the XML document.  
+             
             // FileStream fs = new FileStream(filePath, FileMode.Open);
 
             BooksArray po = new BooksArray();
@@ -64,7 +61,6 @@ namespace BookMaster
         public static void AddBookNew(int Isbn, string Author, string Title)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(BooksArray));
-            // A FileStream is needed to read the XML document.  
             FileStream fs = new FileStream(filePath, FileMode.Open);
             // Declares an object variable of the type to be deserialized.  
             BooksArray po;
@@ -135,16 +131,10 @@ namespace BookMaster
             // Uses the Deserialize method to restore the object's state   
             // with data from the XML document. */  
             po = (BooksArray)serializer.Deserialize(fs);
-            // Reads the order date.  
-            // Console.WriteLine("OrderDate: " + po.Book.Author);
 
-            // Reads the shipping address.  
-            /*Address shipTo = po.Title;
-            ReadAddress(shipTo, "Ship To:");
-            */
             // Reads the list of ordered items.  
             List<Book> items = po.Books;
-            Console.WriteLine("Items to be shipped:");
+            Console.WriteLine("List of books in shelves");
             foreach (Book oi in items)
             {
                 Console.WriteLine("\t" +
@@ -153,12 +143,7 @@ namespace BookMaster
                 oi.Author + "\t");
           
             } 
-            // Reads the subtotal, shipping cost, and total cost.  
-            /*Console.WriteLine(
-            "\n\t\t\t\t\t Subtotal\t" + po.Book.Isbn +
-            "\n\t\t\t\t\t Shipping\t" + po.Book.Author +
-            "\n\t\t\t\t\t Total\t\t" + po.Book.Title
-            ); */
+            
         }
 
     }
