@@ -20,58 +20,48 @@ namespace BookMaster.BooksLibrary
             //XmlSerializer serializer = new XmlSerializer(typeof(PurchaseOrder));
             XmlSerializer serializer = new XmlSerializer(typeof(BooksArray));
         TextWriter writer = new StreamWriter(filePath);
-
         BooksArray booksInst = new BooksArray();
 
 
+        // A FileStream is needed to read the XML document.  
+        // FileStream fs = new FileStream(filePath, FileMode.Open);
         BooksArray po = new BooksArray();
+        // po = (BooksArray)serializer.Deserialize(fs);
         // Creates an OrderedItem.  
         Book i1 = new Book();
-
-            i1.Isbn = Isbn;//1;
-            i1.Author = Author; //"Sigmar";
-            public static void AddBook(int Isbn, string Author, string Title)
-            // Inserts the item into the array.  
+        public static void AddBook(int Isbn, string Author, string Title)
+            i2.Title = "Dog world";
+             // Inserts the item into the array.  
             Book[] items = { i1, i2 };
             po.Books = items;
-            
+             // List<Book> items = { i1, i2 };
+            // po.Books = items;
+            List<Book> items = po.Books;
+            items.Add(i1);
              // Serializes the purchase order, and closes the TextWriter.  
             serializer.Serialize(writer, po);
-            // serializer.Serialize(writer, booksInst);
-           
-            // serializer.Serialize(writer, booksInst);
-             writer.Close();
-        }
-
-    public static void AddBookNew(int Isbn, string Author, string Title)
-    {
-        XmlSerializer serializer = new XmlSerializer(typeof(BooksArray));
-        // A FileStream is needed to read the XML document.  
-        FileStream fs = new FileStream(filePath, FileMode.Open);
-        // Declares an object variable of the type to be deserialized.  
-        BooksArray po;
-        // Uses the Deserialize method to restore the object's state   
-        // with data from the XML document. */  
-        po = (BooksArray)serializer.Deserialize(fs);
-        // Creates an OrderedItem.  
-        Book i1 = new Book();
-        i1.Isbn = Isbn;//1;
-        i1.Author = Author; //"Sigmar";
-        i1.Title = Title;//"Cat world";
-
-        Book[] items = po.Books;
+         public static void AddBookNew(int Isbn, string Author, string Title)
+            i1.Author = Author; //"Sigmar";
+            i1.Title = Title;//"Cat world";
+             
+            Book[] items = po.Books;
+        List<Book> items = po.Books;
         ArrayList a1 = new ArrayList();
-        a1.Add(i1);
-        a1.Add(items);
-        BooksArray booksArr = new BooksArray();
+        public static void ListBooks()
+            // with data from the XML document. */  
+            po = (BooksArray) serializer.Deserialize(fs);
+        // Reads the order date.  
+        // Console.WriteLine("OrderDate: " + po.Book.Author);
+        // Console.WriteLine("OrderDate: " + po.Book.Author);
+        // Reads the shipping address.  
+        /*Address shipTo = po.Title;
+        ReadAddress(shipTo, "Ship To:");
+        */
+        // Reads the list of ordered items.  
+        Book[] items = po.Books;
+        List<Book> items = po.Books;
+        Console.WriteLine("Items to be shipped:")
 
-        // Array stuff = a1.ToArray();
-        // booksArr.Books = stuff;
-        TextWriter writer = new StreamWriter(filePath);
-        // Serializes the purchase order, and closes the TextWriter.  
-        serializer.Serialize(writer, items);
-        // serializer.Serialize(writer, booksInst);
-        writer.Close();
         foreach (Book oi in a1)
         {
             Console.WriteLine("\t" +
