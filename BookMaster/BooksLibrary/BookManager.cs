@@ -52,7 +52,8 @@ namespace BookMaster.BooksLibrary
 
         }
 
-      
+
+
 
 
         public static void ListAllBooks()
@@ -61,20 +62,21 @@ namespace BookMaster.BooksLibrary
             // BooksWriter bookwr = new BooksWriter();
             //  bookwr.AddBook();
             // BooksWriter.AddBook(1, "Sigmar", "Cat world2");
-           // Console.WriteLine("not implemented");
+            // Console.WriteLine("not implemented");
             BooksWriter.ListBooks();
         }
 
         public static void AddNewBook()
         {
-            BooksWriter.AddBook(1, "Sigmar", "Cat world2");
             Console.WriteLine("ISBN number:");
             int isbnNr = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Author name:");
             String AuthorName = Console.ReadLine();
             Console.WriteLine("Book title:");
             String BookTitle = Console.ReadLine();
+
             BooksWriter.AddBook(isbnNr, AuthorName, BookTitle);
+
             Console.Clear();
             //   BooksWriter.AddBook(1, "Sigmar", "Cat world2");
             /* bool keepRunning = true;
@@ -103,6 +105,8 @@ namespace BookMaster.BooksLibrary
              } while (keepRunning); */
 
         }
+
+    }
 
 
         public static void InitCategoryMenu()
