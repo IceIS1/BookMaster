@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 using System.Collections;
 
 
-namespace BookMaster
+namespace BookMaster.BooksLibrary
 {
     class BooksWriter
     {
