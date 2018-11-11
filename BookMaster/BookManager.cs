@@ -52,7 +52,8 @@ namespace BookMaster
 
         }
 
-      
+
+
 
 
         public static void ListAllBooks()
@@ -61,7 +62,7 @@ namespace BookMaster
             // BooksWriter bookwr = new BooksWriter();
             //  bookwr.AddBook();
             // BooksWriter.AddBook(1, "Sigmar", "Cat world2");
-           // Console.WriteLine("not implemented");
+            // Console.WriteLine("not implemented");
             BooksWriter.ListBooks();
         }
 
@@ -104,6 +105,8 @@ namespace BookMaster
              } while (keepRunning); */
 
         }
+
+    }
 
 
         public static void InitCategoryMenu()
