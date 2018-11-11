@@ -106,8 +106,6 @@ namespace BookMaster
 
         }
 
-    }
-
 
         public static void InitCategoryMenu()
         {
@@ -116,5 +114,10 @@ namespace BookMaster
 
         }
 
+
     }
+
+
+
 }
+
