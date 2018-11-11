@@ -16,95 +16,101 @@ namespace BookMaster.BooksLibrary
     {
         public static string filePath = @"../../books.xml";
 
+
         public static void AddBook(int Isbn, string Author, string Title)
+        {
+
             //XmlSerializer serializer = new XmlSerializer(typeof(PurchaseOrder));
             XmlSerializer serializer = new XmlSerializer(typeof(BooksArray));
-        TextWriter writer = new StreamWriter(filePath);
-        BooksArray booksInst = new BooksArray();
+            TextWriter writer = new StreamWriter(filePath);
+            TextWriter writer = new StreamWriter(filePath) <<<<<;
+
+            BooksArray booksInst = new BooksArray();
 
 
-        // A FileStream is needed to read the XML document.  
-        // FileStream fs = new FileStream(filePath, FileMode.Open);
-        BooksArray po = new BooksArray();
-        // po = (BooksArray)serializer.Deserialize(fs);
-        // Creates an OrderedItem.  
-        Book i1 = new Book();
-        public static void AddBook(int Isbn, string Author, string Title)
+
+            // FileStream fs = new FileStream(filePath, FileMode.Open);
+            BooksArray booksInst = new BooksArray();
+
+            BooksArray po = new BooksArray();
+            // po = (BooksArray)serializer.Deserialize(fs);
+
+            // Creates an OrderedItem.  
+            Book i1 = new Book();
+
+            BooksArray po = new BooksArray();
+            // Creates an OrderedItem.  
+
+            Book i1 = new Book();
+            i1.Isbn = Isbn;//1;
+            i1.Author = Author; //"Sigmar";
+            i1.Title = Title;//"Cat world";
+
+            Book i2 = new Book();
+            i2.Isbn = 2;
+            i2.Author = "1Sigmar";
             i2.Title = "Dog world";
-             // Inserts the item into the array.  
+        }
+
+
+
+        public static void AddBook(int Isbn, string Author, string Title)
+        {
+            i2.Title = "Dog world";
+            // Inserts the item into the array.  
             Book[] items = { i1, i2 };
             po.Books = items;
-             // List<Book> items = { i1, i2 };
+            // List<Book> items = { i1, i2 };
             // po.Books = items;
             List<Book> items = po.Books;
             items.Add(i1);
-             // Serializes the purchase order, and closes the TextWriter.  
+
+            // Serializes the purchase order, and closes the TextWriter.  
             serializer.Serialize(writer, po);
-         public static void AddBookNew(int Isbn, string Author, string Title)
-            i1.Author = Author; //"Sigmar";
-            i1.Title = Title;//"Cat world";
-             
-            Book[] items = po.Books;
-        List<Book> items = po.Books;
-        ArrayList a1 = new ArrayList();
-        public static void ListBooks()
-            // with data from the XML document. */  
-            po = (BooksArray) serializer.Deserialize(fs);
-        // Reads the order date.  
-        // Console.WriteLine("OrderDate: " + po.Book.Author);
-        // Console.WriteLine("OrderDate: " + po.Book.Author);
-        // Reads the shipping address.  
-        /*Address shipTo = po.Title;
-        ReadAddress(shipTo, "Ship To:");
-        */
-        // Reads the list of ordered items.  
-        Book[] items = po.Books;
-        List<Book> items = po.Books;
-        Console.WriteLine("Items to be shipped:")
+            writer.Close();
 
-        foreach (Book oi in a1)
-        {
-            Console.WriteLine("\t" +
-            oi.Isbn + "\t" +
-            oi.Title + "\t" +
-            oi.Author + "\t");
+            // serializer.Serialize(writer, booksInst);
+            writer.Close();
         }
-    }
 
-    public static void ListBooks()
+
+        public static void AddBookNew(int Isbn, string Author, string Title)
         {
-            // Creates an instance of the XmlSerializer class;  
-            // specifies the type of object to be deserialized.  
-            XmlSerializer serializer = new XmlSerializer(typeof(BooksArray));
-            // If the XML document has been altered with unknown   
-            // nodes or attributes, handles them with the   
-            // UnknownNode and UnknownAttribute events.  
-            /*serializer.UnknownNode += new
-            XmlNodeEventHandler(serializer_UnknownNode);
-            serializer.UnknownAttribute += new
-            XmlAttributeEventHandler(serializer_UnknownAttribute); */
+            {
+                i1.Author = Author; //"Sigmar";
+                i1.Title = Title;//"Cat world";
 
-            // A FileStream is needed to read the XML document.  
-            FileStream fs = new FileStream(filePath, FileMode.Open);
-            // Declares an object variable of the type to be deserialized.  
-            BooksArray po;
-            // Uses the Deserialize method to restore the object's state   
-            // with data from the XML document. */  
-            po = (BooksArray)serializer.Deserialize(fs);
+                Book[] items = po.Books;
+                List<Book> items = po.Books;
+                ArrayList a1 = new ArrayList();
+            }
 
-            // Reads the list of ordered items.  
-            List<Book> items = po.Books;
-            Console.WriteLine("List of books in shelves");
-            foreach (Book oi in items)
+            public static void ListBooks()
+            {
+                // with data from the XML document. */  
+                po = (BooksArray)serializer.Deserialize(fs);
+                // Reads the order date.  
+                // Console.WriteLine("OrderDate: " + po.Book.Author);
+                // Console.WriteLine("OrderDate: " + po.Book.Author);
+                // Reads the shipping address.  
+                /*Address shipTo = po.Title;
+                ReadAddress(shipTo, "Ship To:");
+                */
+                // Reads the list of ordered items.  
+                Book[] items = po.Books;
+                List<Book> items = po.Books;
+                Console.WriteLine("Items to be shipped:")
+            }
+            foreach (Book oi in a1)
             {
                 Console.WriteLine("\t" +
                 oi.Isbn + "\t" +
                 oi.Title + "\t" +
                 oi.Author + "\t");
-          
-            } 
-            
+            }
         }
-
     }
 }
+
+
+

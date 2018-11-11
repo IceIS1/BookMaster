@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BooksLibrary\BookManager.cs" />
-    <Compile Include="Old\Books.cs" />
+    <Compile Include="BooksLibrary\Books.cs" />
     <Compile Include="BooksLibrary\ManageTitles.cs" />
     <Compile Include="BooksLibrary\BooksWriter.cs" />
     <Compile Include="BooksLibrary\ManageGeneres.cs" />
@@ -115,6 +115,8 @@
   <ItemGroup>
     <Content Include="books.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Old\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
