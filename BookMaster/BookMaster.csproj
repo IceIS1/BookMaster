@@ -99,12 +99,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BooksLibrary\BookManager.cs" />
-    <Compile Include="BooksLibrary\Books.cs" />
-    <Compile Include="BooksLibrary\ManageTitles.cs" />
-    <Compile Include="BooksLibrary\BooksWriter.cs" />
-    <Compile Include="BooksLibrary\ManageGeneres.cs" />
-    <Compile Include="Startup\NugetMenu.cs" />
+    <Compile Include="BookManager.cs" />
+    <Compile Include="Books.cs" />
+    <Compile Include="BooksWriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -113,10 +110,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="books.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Old\" />
+    <Content Include="books.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
