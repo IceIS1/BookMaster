@@ -67,15 +67,14 @@ namespace BookMaster.BooksLibrary
 
         public static void AddNewBook()
         {
+            BooksWriter.AddBook(1, "Sigmar", "Cat world2");
             Console.WriteLine("ISBN number:");
             int isbnNr = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Author name:");
             String AuthorName = Console.ReadLine();
             Console.WriteLine("Book title:");
             String BookTitle = Console.ReadLine();
-
             BooksWriter.AddBook(isbnNr, AuthorName, BookTitle);
-
             Console.Clear();
             //   BooksWriter.AddBook(1, "Sigmar", "Cat world2");
             /* bool keepRunning = true;
