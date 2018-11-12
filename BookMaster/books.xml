@@ -2,9 +2,9 @@
 <PurchaseOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.cpandl.com">
   <Items>
     <Book>
-      <Isbn>311</Isbn>
-      <Author>Sim</Author>
-      <Title>TEst</Title>
+      <Isbn>12</Isbn>
+      <Author>trest</Author>
+      <Title>sdfdsf</Title>
     </Book>
   </Items>
 </PurchaseOrder>

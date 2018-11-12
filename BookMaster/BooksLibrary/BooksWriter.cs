@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
 using System.Data;
 using System.Xml.Serialization;
 using System.Collections;
+using System.Collections.Generic;
 
 
-namespace BookMaster
+namespace BookMaster.BooksLibrary
 {
     class BooksWriter
     {
@@ -25,13 +22,13 @@ namespace BookMaster
             TextWriter writer = new StreamWriter(filePath);
 
             BooksArray booksInst = new BooksArray();
-           
-            
+
+
             // A FileStream is needed to read the XML document.  
             // FileStream fs = new FileStream(filePath, FileMode.Open);
 
             BooksArray po = new BooksArray();
-           // po = (BooksArray)serializer.Deserialize(fs);
+            // po = (BooksArray)serializer.Deserialize(fs);
 
             // Creates an OrderedItem.  
             Book i1 = new Book();
@@ -90,7 +87,7 @@ namespace BookMaster
             a1.Add(items);
 
             BooksArray booksArr = new BooksArray();
-            
+
             // Array stuff = a1.ToArray();
             // booksArr.Books = stuff;
 
@@ -109,7 +106,7 @@ namespace BookMaster
                 Console.WriteLine("\t" +
                 oi.Isbn + "\t" +
                 oi.Title + "\t" +
-                oi.Author + "\t"); 
+                oi.Author + "\t");
 
             }
         }
@@ -150,15 +147,8 @@ namespace BookMaster
                 oi.Isbn + "\t" +
                 oi.Title + "\t" +
                 oi.Author + "\t");
-          
-            } 
-            // Reads the subtotal, shipping cost, and total cost.  
-            /*Console.WriteLine(
-            "\n\t\t\t\t\t Subtotal\t" + po.Book.Isbn +
-            "\n\t\t\t\t\t Shipping\t" + po.Book.Author +
-            "\n\t\t\t\t\t Total\t\t" + po.Book.Title
-            ); */
-        }
 
+            }
+        }
     }
 }

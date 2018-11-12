@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace BookMaster
+namespace BookMaster.BooksLibrary
 {
    
 
 
-    class BookManager
+    public static class BookManager
     {
        
  
@@ -114,10 +114,9 @@ namespace BookMaster
 
         }
 
-
     }
 
 
 
+    
 }
-
