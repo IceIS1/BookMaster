@@ -19,7 +19,7 @@ namespace BookMaster.BooksLibrary
             Console.WriteLine("Book title:");
             String BookTitle = Console.ReadLine();
 
-            BooksWriter.AddBook(isbnNr, AuthorName, BookTitle);
+            BooksWriter.AddBookNew(isbnNr, AuthorName, BookTitle);
             
             // Console.WriteLine("Add Title not implemented");
             Console.ReadKey();
@@ -36,8 +36,8 @@ namespace BookMaster.BooksLibrary
         }
         public static void List()
         {
-          //  ListAllBooks();
-            Console.WriteLine("List Title not implemented");
+            BooksWriter.ListBooks();
+          //  Console.WriteLine("List Title not implemented");
             Console.ReadKey();
         }
 

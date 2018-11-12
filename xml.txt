@@ -1,3 +1,8 @@
+
+// https://codereview.stackexchange.com/questions/36238/proper-and-elegant-way-of-building-a-xml-document
+
+
+
 // The XmlRoot attribute allows you to set an alternate name   
     // (PurchaseOrder) for the XML element and its namespace. By   
     // default, the XmlSerializer uses the class name. The attribute   
@@ -93,3 +98,119 @@
              // Serializes the purchase order, and closes the TextWriter.  
              serializer.Serialize(writer, po);
              */
+
+
+
+			  //create new instance of XmlDocument
+            /*    XmlDocument doc = new XmlDocument();
+
+                //load from file
+                doc.Load(filePath);
+
+                //create node and add value
+                XmlNode node = doc.CreateNode(XmlNodeType.Element, "Items", null);
+               //    XmlNode node = doc.SelectSingleNode("Items");
+               // XmlNodeList node = doc.SelectNodes("/Items/Book");
+
+
+                //node.InnerText = "this is new node";
+
+                XmlNode subNode = doc.CreateNode(XmlNodeType.Element, "Book", null);
+
+                subNode.InnerText = "this is new node";
+
+                node.AppendChild(subNode);
+                //add to elements collection
+                 doc.DocumentElement.AppendChild(node);
+
+                //save back
+                doc.Save(filePath); */
+            /*    XmlDocument doc4 = new XmlDocument();
+                doc4.Load(filePath);
+                XmlElement XEle =doc4.CreateElement("Items");
+                                                                //  XEle.SetAttribute("Book", "Project6");
+                                                                //    XEle.SetAttribute("ID", "6");
+                doc4.DocumentElement.AppendChild(XEle.Clone());
+                doc4.Save(Console.Out);
+                Console.WriteLine(); */
+            /*   XDocument doc = XDocument.Load(filePath);
+               XElement root = new XElement("Book");
+               root.Add(new XAttribute("name", "name goes here"));
+               root.Add(new XElement("SnippetCode", "SnippetCode"));
+               doc.Element("Items").Add(root); */
+            /* XDocument doc = XDocument.Load(filePath);
+             doc.Root.Add(
+                 new XElement("Book",
+                     new XAttribute("name", "name goes here"),
+                     new XElement("SnippetCode", "SnippetCode"))
+             ); */
+
+
+            /*XDocument doc = XDocument.Load(filePath);
+            XElement root = new XElement("Items");
+            root.Add(new XAttribute("name", "name goes here"));
+            root.Add(new XElement("SnippetCode", "SnippetCode"));
+            doc.Root.Add(root); */
+
+            //doc.Element("Items").Add(root);
+            // doc.Save(filePath);
+
+
+            /*  var doc = XDocument.Parse(@"
+   <PurchaseOrder xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns='http://www.cpandl.com'>
+     <Items>
+       <Book>
+         <Isbn>12</Isbn>
+         <Author>Test</Author>
+         <Title>Prufa</Title>
+       </Book>
+     </Items>
+   </PurchaseOrder>");
+
+               var text1 = "Book";
+               var text2 = "Lemon";
+
+               // Find the food group element
+
+               var group = doc.Element("Items").Element(text1);
+
+               if (group == null)
+               {
+                   Console.WriteLine("Group {0} does not exist", text1);
+                   return;
+               }
+
+               // Check the existing food
+
+               var items = group.Elements();
+
+               if (items.Any(e => e.Value == text2))
+               {
+                   Console.WriteLine("Food {0} already exists", text2);
+                   return;
+               }
+
+               // Finally add the food
+
+               group.Add(new XElement(String.Format("ITEM{0}", items.Count() + 1), text2));
+
+               Console.WriteLine(doc); */
+
+            /*    XmlDocument doc = new XmlDocument();
+                doc.Load(filePath);
+
+                string group = "Book"; //textbox1.Text
+                string item = "KIWI"; //textbox2.Text
+                                      //select your specific node ..
+                XmlElement el = (XmlElement)doc.SelectSingleNode("/Items/" + group);
+
+                if (el != null)
+                {
+                    XmlElement elem = doc.CreateElement("ITEM"); //item1 ,item2..
+                    elem.InnerText = item;
+                    el.AppendChild(elem);
+                }
+
+                Console.WriteLine(doc);
+
+                doc.Save(filePath); */
