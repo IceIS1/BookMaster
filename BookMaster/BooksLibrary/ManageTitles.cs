@@ -12,10 +12,16 @@ namespace BookMaster.BooksLibrary
         public static void Add()
         {
             // AddNewBook();
+            Console.WriteLine("ISBN number:");
+            int isbnNr = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Author name:");
+            String AuthorName = Console.ReadLine();
+            Console.WriteLine("Book title:");
+            String BookTitle = Console.ReadLine();
 
-
-            BooksWriter.AddBook(12, "trest","sdfdsf");
-            Console.WriteLine("Add Title not implemented");
+            BooksWriter.AddBook(isbnNr, AuthorName, BookTitle);
+            
+            // Console.WriteLine("Add Title not implemented");
             Console.ReadKey();
         }
         public static void Edit()
